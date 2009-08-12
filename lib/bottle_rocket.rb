@@ -1,4 +1,4 @@
-class BottleRocket
+class BuildLights::BottleRocket
   def self.turn_on(unit, house='A')
     send('on', unit, house)
   end

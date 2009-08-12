@@ -1,7 +1,7 @@
 require 'feed_parser'
 
-class HudsonFeedScanner
-  def initialize(uri, parser = FeedParser)
+class BuildLights::HudsonFeedScanner
+  def initialize(uri, parser = BuildLights::FeedParser)
     @feed = parser.parse uri
   end
   

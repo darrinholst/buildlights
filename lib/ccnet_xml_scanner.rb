@@ -1,7 +1,7 @@
 require 'xml_parser'
 
-class CcNetXmlScanner
-  def initialize(uri, parser = XmlParser)
+class BuildLights::CcNetXmlScanner
+  def initialize(uri, parser = BuildLights::XmlParser)
     @doc = parser.parse(uri)
   end
   

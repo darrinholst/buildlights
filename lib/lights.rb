@@ -1,10 +1,10 @@
 require 'bottle_rocket'
 
-class Lights
+class BuildLights::Lights
   GREEN = 1
   RED = 2
 
-  def initialize(implementation = BottleRocket)
+  def initialize(implementation = BuildLights::BottleRocket)
     @implementation = implementation
   end
   

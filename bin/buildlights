@@ -1,0 +1,32 @@
+#!ruby
+
+require 'rubygems'
+require 'build-lights'
+
+config = BuildLights::Config.new
+
+failed_jobs = []
+
+url = config.ccnet_url
+
+if(url)
+  puts "checking #{url}"
+  failed_jobs << BuildLights::CcNetXmlScanner.new(url)
+else
+  puts "skipping ccnet, ccnet_url not found"
+end
+
+url = config.hudson_url
+
+if(url)
+  puts "checking #{url}"
+  failed_jobs << BuildLights::HudsonFeedScanner.new(url)
+else
+  puts "skipping hudson, hudson_url not found"
+end
+
+if(failed_jobs.compact.empty?)
+    BuildLights::Lights.new.success
+else
+    BuildLights::Lights.new.failed
+end

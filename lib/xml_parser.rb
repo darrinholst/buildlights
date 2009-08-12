@@ -1,7 +1,7 @@
 require 'hpricot'
 require 'open-uri'
 
-class XmlParser
+class BuildLights::XmlParser
   def self.parse(uri)
     Hpricot::XML(open(uri))
   end
