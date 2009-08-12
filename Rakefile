@@ -5,12 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "build-lights"
+    gem.executables = "buildlights"
     gem.summary = %Q{build monitor that will trigger lights via x10}
     gem.email = "darrinholst@gmail.com"
     gem.homepage = "http://github.com/darrinholst/build-lights"
     gem.authors = ["Darrin Holst"]
     gem.rubyforge_project = "build-lights"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency("simple-rss", ">= 1.2")
+    gem.add_dependency("hpricot", ">= 0.8.1")
   end
 
   Jeweler::RubyforgeTasks.new
