@@ -4,6 +4,7 @@ require 'open-uri'
 module BuildLights
   class Hudson
     def initialize(uri, parser = FeedParser)
+      puts "Hudson url: #{uri}" if $verbose      
       @feed = parser.parse uri
     end
   
@@ -11,7 +12,11 @@ module BuildLights
       @feed.entries.each.map do |entry|
         match = /(.*) #\d+ (.*)/.match(entry.title)
         raise "Invalid rss title #{entry.title}" unless match
-        match[1] if /FAIL/i.match(match[2])
+        name = match[1]
+        status = match[2]
+        puts "#{name} -> #{status}" if $verbose
+        failed = /FAIL/i.match(status)
+        name if failed
       end.compact
     end
   end

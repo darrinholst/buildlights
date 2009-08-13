@@ -30,7 +30,10 @@ module BuildLights
     private
 
     def self.send(command, unit, house)
-      puts `br -v --house=#{house} --#{command}=#{unit}`
+      cmd = "br -v --house=#{house} --#{command}=#{unit}"
+      puts "sending X10 command -> #{cmd}" if $verbose
+      system cmd
+      raise "bottlerocket command failed with status code #{$?.exitstatus}" if $?.exitstatus > 0
     end
   end  
 end

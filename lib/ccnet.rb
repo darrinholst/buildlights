@@ -4,12 +4,17 @@ require 'open-uri'
 module BuildLights
   class CcNet
     def initialize(uri, parser = XmlParser)
+      puts "CruiseControl.net url: #{uri}" if $verbose
       @doc = parser.parse(uri)
     end
   
     def failed_jobs
       @doc.search(:Project).map do |project|
-        project[:name] if project[:lastBuildStatus] =~ /FAIL/i
+        name = project[:name]
+        status = project[:lastBuildStatus]
+        puts "#{name} -> #{status}" if $verbose
+        failed = /FAIL/i.match(status)
+        name if failed
       end.compact
     end
   end
