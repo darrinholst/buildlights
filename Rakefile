@@ -4,13 +4,13 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "build-lights"
+    gem.name = "buildlights"
     gem.executables = "buildlights"
     gem.summary = %Q{build monitor that will trigger lights via x10}
     gem.email = "darrinholst@gmail.com"
-    gem.homepage = "http://github.com/darrinholst/build-lights"
+    gem.homepage = "http://github.com/darrinholst/buildlights"
     gem.authors = ["Darrin Holst"]
-    gem.rubyforge_project = "build-lights"
+    gem.rubyforge_project = "buildlights"
     gem.add_dependency("simple-rss", ">= 1.2")
     gem.add_dependency("hpricot", ">= 0.8.1")
   end

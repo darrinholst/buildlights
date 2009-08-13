@@ -1,4 +1,4 @@
-= build-lights
+= buildlights
 
 Description goes here.
 
