@@ -1,7 +1,7 @@
 module BuildLights
   class Lights
-    GREEN = 1
-    RED = 2
+    RED = 1
+    GREEN = 2
 
     def initialize(implementation = BottleRocket)
       @implementation = implementation
