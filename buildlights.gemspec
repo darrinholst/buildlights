@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "bin/buildlights",
-     "build-lights.gemspec",
+     "buildlights.gemspec",
      "lib/buildlights.rb",
      "lib/ccnet.rb",
      "lib/hudson.rb",
