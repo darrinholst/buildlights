@@ -23,17 +23,12 @@ Gem::Specification.new do |s|
      "VERSION",
      "bin/buildlights",
      "build-lights.gemspec",
-     "lib/bottle_rocket.rb",
-     "lib/build_lights.rb",
-     "lib/ccnet_xml_scanner.rb",
-     "lib/config.rb",
-     "lib/feed_parser.rb",
-     "lib/hudson_feed_scanner.rb",
+     "lib/buildlights.rb",
+     "lib/ccnet.rb",
+     "lib/hudson.rb",
      "lib/lights.rb",
-     "lib/xml_parser.rb",
-     "test/ccnet_xml_scanner_test.rb",
-     "test/config_test.rb",
-     "test/hudson_feed_scanner_test.rb",
+     "test/ccnet_test.rb",
+     "test/hudson_test.rb",
      "test/lights_test.rb",
      "test/test_helper.rb"
   ]
@@ -44,9 +39,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{build monitor that will trigger lights via x10}
   s.test_files = [
-    "test/ccnet_xml_scanner_test.rb",
-     "test/config_test.rb",
-     "test/hudson_feed_scanner_test.rb",
+    "test/ccnet_test.rb",
+     "test/hudson_test.rb",
      "test/lights_test.rb",
      "test/test_helper.rb"
   ]

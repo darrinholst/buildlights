@@ -1,30 +1,29 @@
 require 'test_helper'
-require 'ccnet_xml_scanner'
 
-class CcNetXmlScannerTest < Test::Unit::TestCase
+class CcNetTest < Test::Unit::TestCase
   URI = "some uri"
   
   def test_failed_jobs
     parser = parser_for(URI, ["job 1", "Failed"], ["job 2", "Failed"])
-    scanner = CcNetXmlScanner.new(URI, parser)
+    scanner = BuildLights::CcNet.new(URI, parser)
     assert_equal(["job 1", "job 2"], scanner.failed_jobs)
   end
 
   def test_successful_jobs
     parser = parser_for(URI, ["job 1", "Success"], ["job 2", "Success"])
-    scanner = CcNetXmlScanner.new(URI, parser)
+    scanner = BuildLights::CcNet.new(URI, parser)
     assert_equal([], scanner.failed_jobs)
   end
 
   def test_mixed_jobs
     parser = parser_for(URI, ["job 1", "Success"], ["job 2", "Failed"])
-    scanner = CcNetXmlScanner.new(URI, parser)
+    scanner = BuildLights::CcNet.new(URI, parser)
     assert_equal(["job 2"], scanner.failed_jobs)
   end
 
   def test_mixed_case
     parser = parser_for(URI, ["job 1", "FAILED"], ["job 2", "SUCCESS"], ["job 3", "FAIL"])
-    scanner = CcNetXmlScanner.new(URI, parser)
+    scanner = BuildLights::CcNet.new(URI, parser)
     assert_equal(["job 1", "job 3"], scanner.failed_jobs)
   end
       
