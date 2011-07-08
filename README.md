@@ -12,11 +12,11 @@ light via x10
 
 ## Usage
 
-    gem install bottlerocket
+    gem install buildlights
 
 Add the following to cron
 
-    bottlerocket -v --hudson http://yourhudsonserver/rssLatest
+    buildlights -v --hudson http://yourhudsonserver/rssLatest
 
 ## Copyright
 
