@@ -1,7 +1,0 @@
-= buildlights
-
-Description goes here.
-
-== Copyright
-
-Copyright (c) 2009 Darrin Holst. See LICENSE for details.
