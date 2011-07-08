@@ -7,7 +7,7 @@ module BuildLights
       puts "CruiseControl.net url: #{uri}" if $verbose
       @doc = parser.parse(uri)
     end
-  
+
     def failed_jobs
       @doc.search(:Project).map do |project|
         name = project[:name]
@@ -18,7 +18,7 @@ module BuildLights
       end.compact
     end
   end
-  
+
   class XmlParser
     def self.parse(uri)
       Hpricot::XML(open(uri))

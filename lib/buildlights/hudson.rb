@@ -24,7 +24,7 @@ module BuildLights
       end
 
       jobs.map do |name, status|
-        name if /FAIL/i.match(status)
+        name if /FAIL|BROKE/i.match(status)
       end.compact
     end
   end

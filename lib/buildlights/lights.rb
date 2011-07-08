@@ -6,18 +6,18 @@ module BuildLights
     def initialize(implementation = BottleRocket)
       @implementation = implementation
     end
-  
+
     def success
       @implementation.turn_on GREEN
       @implementation.turn_off RED
     end
-  
+
     def failed
       @implementation.turn_on RED
       @implementation.turn_off GREEN
     end
   end
-  
+
   class BottleRocket
     def self.turn_on(unit, house='A')
       send('on', unit, house)
@@ -35,5 +35,5 @@ module BuildLights
       system cmd
       raise "bottlerocket command failed with status code #{$?.exitstatus}" if $?.exitstatus > 0
     end
-  end  
+  end
 end
