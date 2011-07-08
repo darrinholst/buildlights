@@ -12,11 +12,11 @@ light via x10
 
 ## Usage
 
-  gem install bottlerocket
+    gem install bottlerocket
 
 Add the following to cron
 
-  bottlerocket -v --hudson http://yourhudsonserver/rssLatest
+    bottlerocket -v --hudson http://yourhudsonserver/rssLatest
 
 ## Copyright
 
